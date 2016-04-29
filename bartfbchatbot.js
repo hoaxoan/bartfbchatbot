@@ -262,8 +262,7 @@ function processLocation(sender, coords) {
 }
 
 function processProduct(sender) {
-    var messageData,
-    messageData = {
+    var messageData = {
         'attachment': {
             'type': 'template',
             'payload': {
@@ -320,8 +319,7 @@ function processProduct(sender) {
 }
 
 function processReceipt(sender) {
-    var messageData,
-    messageData = {
+    var messageData = {
         'attachment': {
             'type': 'template',
             'payload': {
