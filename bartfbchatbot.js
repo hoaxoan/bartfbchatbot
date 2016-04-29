@@ -463,8 +463,6 @@ app.post('/webhook/', function (req, res) {
             console.log(JSON.stringify(event));
             console.log('^^^^^^^^^^^^^^^^^^^^^^^^');
             sender = event.sender.id;
-            processProduct(sender);
-            processReceipt(sender);
             
             if (event.message && event.message.attachments && event.message.attachments.length > 0) {
                 attachment = event.message.attachments[0];
