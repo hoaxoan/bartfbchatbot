@@ -320,7 +320,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/webhook/', function (req, res) {
-    console.log(req.query['hub.challenge'] + '-' + req.query['hub.verify_token']);
+    console.log('test' + req.query['hub.challenge'] + '-' + req.query['hub.verify_token']);
     if (req.query['hub.verify_token'] === 'lets_talk_mass_trans1t') {
         res.send(req.query['hub.challenge']);
     }
