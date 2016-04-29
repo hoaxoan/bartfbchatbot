@@ -261,6 +261,7 @@ function processLocation(sender, coords) {
     });   
 }
 
+
 function processProduct(sender) {
     var messageData = {
         'attachment': {
@@ -312,6 +313,7 @@ function processProduct(sender) {
                       }              
                     ]
                   }
+                ]
             }
         }
     };
