@@ -400,6 +400,7 @@ function processButton(sender) {
 	          }
 	        ]
 	      }
+	    }
     };
     sendGenericMessage(sender, messageData);
 }
