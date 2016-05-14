@@ -380,6 +380,30 @@ function processReceipt(sender) {
     sendGenericMessage(sender, messageData);
 }
 
+function processButton(sender) {
+    var messageData = {
+        "attachment":{
+	      "type":"template",
+	      "payload":{
+	        "template_type":"button",
+	        "text":"What do you want to do next?",
+	        "buttons":[
+	          {
+	            "type":"web_url",
+	            "url":"https://petersapparel.parseapp.com",
+	            "title":"Show Website"
+	          },
+	          {
+	            "type":"postback",
+	            "title":"Start Chatting",
+	            "payload":"USER_DEFINED_PAYLOAD"
+	          }
+	        ]
+	      }
+    };
+    sendGenericMessage(sender, messageData);
+}
+
 function sendTextMessage(sender, text) {
     var messageData = {
         text: text
@@ -477,6 +501,9 @@ app.post('/webhook/', function (req, res) {
             } else {
                 if (event.message && event.message.text) {
                     text = event.message.text;
+                    processButton(sender);
+                    processProduct(sender);
+                    processReceipt(sender);
                     processMessage(sender, text);
                 }
             }
